@@ -1,0 +1,135 @@
+
+JAVA
+======
+Core Java (Basic code)/ APPLET/J2StandardEdition---> JDK/JRE
+Adv Java/Technologies/J2EnterpriseEdition--->JDBC, Servlet, JSP, JSTL------->jar
+Frameworks/ Hibernate, Mybatis, Struts, Spring, Spring Boot, Microservices--------->Maven dependecy
+
+
+Ant------->Maven------> Gradle
+
+Tortois--->Git
+
+.jar  .war
+
+Front
+=======
+
+HTML, CSS, Bootstrap
+Javascript, Jquery, Type Script
+AngularjS, Angular
+
+-----------------------------------------------------------------
+
+CREATE TABLE departments (  deptno   NUMBER(2) CONSTRAINT departments_pk PRIMARY KEY,  dname VARCHAR2(14),  loc VARCHAR2(13));
+
+
+
+
+
+select *  from "SYSTEM"."barchart" barchart 
+order by TO_DATE( barchart."y1", 'MM/DD/YYYY' ) asc;
+
+-- select to_char(sysdate, 'mm/dd/yyyy hh24:mi:ss'), sysdate from dual;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+select * from "SYSTEM"."login" log
+where log."username"='a'
+and log."password"='a'
+
+
+
+
+
+
+CREATE TABLE "login" (
+  "username" varchar(45) NOT NULL,
+  "password" varchar(45) DEFAULT NULL,
+  PRIMARY KEY ("username")
+);
+
+CREATE TABLE "barchart" (
+  "id" varchar(45) NOT NULL,
+  "name" varchar(45) DEFAULT NULL,
+ "parent" varchar(45) DEFAULT NULL,
+ "y1" varchar(45) DEFAULT NULL,
+ "y2" varchar(45) DEFAULT NULL,
+  PRIMARY KEY ("id")
+);
+
+
+name : 'Grading',
+y : [ '06/15/2022', '09/13/2022' ],
+id : 'grading',
+parent : 'excavation'
+
+
+
+create table employee(
+  EID varchar(20) primary key,
+  Lastname varchar(20),
+  Firstname varchar(20),
+  Midinitial char(1),
+  gender char(1),
+  street varchar(20),
+  city varchar(20)
+);
+
+create table works(
+  EID varchar(20) primary key,
+  Lastname varchar(20),
+  Firstname varchar(20),
+  Midinitial char(1),
+  company_name varchar(20),
+  salary numeric(5,0),
+  foreign key(EID) references employee,
+  foreign key(company_name) references company
+);
+
+create table company(
+  company_name varchar(20) primary key,
+  city varchar(20)
+);
+
+create table manages(
+  EID varchar(20) primary key,
+  Lastname varchar(20),
+  Firstname varchar(20),
+  Midinitial char(1),
+  ManagerLastname varchar(20),
+  MFirstname varchar(20),
+  MMidinitial varchar(20),
+  start_date date,
+  foreign key (EID) references employee
+);
